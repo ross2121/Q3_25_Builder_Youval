@@ -18,6 +18,14 @@ umi.use(signerIdentity(signer));
         //1. Load image
         //2. Convert image to generic file.
         //3. Upload image
+        const imagepath=await readFile("cluster1/generug.png");
+        const generatefile=createGenericFile(imagepath,"turbin3.jpeg",{
+            contentType:"image/jpeg"
+        });
+     
+
+        const [myUri] =await umi.uploader.upload([generatefile]) 
+        console.log("Your image URI: ", myUri);
 
         // const image = ???
 

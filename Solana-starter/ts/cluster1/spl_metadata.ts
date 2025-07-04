@@ -25,8 +25,6 @@ umi.use(irysUploader());
         const imageUri = "https://media.licdn.com/dms/image/v2/D560BAQFCvzGKgNWmTQ/company-logo_200_200/company-logo_200_200/0/1733371087700/turbin3_logo?e=2147483647&v=beta&t=zIKTy9Hx-t4D9lEc-UjcEFA45b6-rzgk_sICHeTR46c"; // Replace with your image URL
 
         
-
-        // Step 2: Create metadata JSON
         const metadata = {
             name: "Youval Token",
             symbol: "SYS", 
@@ -52,15 +50,11 @@ umi.use(irysUploader());
                 category: "image"
             }
         };
-
-        // Step 3: Upload metadata JSON
         const metadataFile = createGenericFile(JSON.stringify(metadata), "metadata.json", {
             contentType: "application/json"
         });
         const [metadataUri] = await umi.uploader.upload([metadataFile]);
         console.log("Metadata uploaded:", metadataUri);
-
-        // Step 4: Create token metadata
         let accounts: CreateMetadataAccountV3InstructionAccounts = {
             mint:mint,
             mintAuthority:signer,

@@ -18,27 +18,27 @@ umi.use(signerIdentity(signer));
         // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
 
         
-        // const imageUri = "https://media.licdn.com/dms/image/v2/D560BAQFCvzGKgNWmTQ/company-logo_200_200/company-logo_200_200/0/1733371087700/turbin3_logo?e=2147483647&v=beta&t=zIKTy9Hx-t4D9lEc-UjcEFA45b6-rzgk_sICHeTR46c"; 
-        // const metadata = {
-        //     name: "?",
-        //     symbol: "?",
-        //     description: "?",
-        //     image: "?",
-        //     attributes: [
-        //         {trait_type: '?', value: '?'}
-        //     ],
-        //     properties: {
-        //         files: [
-        //             {
-        //                 type: "image/png",
-        //                 uri: "?"
-        //             },
-        //         ]
-        //     },
-        //     creators: []
-        // };
-        // const myUri = ???
-        // console.log("Your metadata URI: ", myUri);
+        const imageUri = "https://devnet.irys.xyz/29SZLp3Ht8LtKXikX6hAvvAzrxwHhoBf2g7RTC9JuNkV"; 
+        const metadata = {
+            name: "Turbin rug day",
+            symbol: "TRG",
+            description: "It is rug day",
+            image: imageUri,
+            attributes: [
+                {trait_type: "ice", value: '5'}
+            ],
+            properties: {
+                files: [
+                    {
+                        type: "image/png",
+                        uri: imageUri
+                    },
+                ]
+            },
+            creators: []
+        };
+        const myUri =await umi.uploader.uploadJson(metadata);
+        console.log("Your metadata URI: ", myUri);
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);
