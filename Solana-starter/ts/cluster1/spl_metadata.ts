@@ -1,4 +1,4 @@
-import wallet from "../trubin3-wallet.json"
+import wallet from "../turbin3-wallet.json"
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
 import { 
